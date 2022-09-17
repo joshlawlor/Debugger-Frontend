@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PostForm from "../../components/PostForm/PostForm";
 import tokenService from "../../utils/tokenService";
+import M from 'materialize-css'
 
 const PostsPage = ({ backendURL, loggedIn } ) => {
 
@@ -39,6 +40,8 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
         if(loggedIn){
             return (
                 <div>
+                    <h1>Welcome to BugBuddy!</h1>
+
                     <PostForm backendURL={backendURL}/>
                     <h1>Debugging Posts</h1>
                     <ul>

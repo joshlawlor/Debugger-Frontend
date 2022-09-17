@@ -1,4 +1,5 @@
 import './App.css';
+import M from 'materialize-css'
 import React, { useEffect, useState } from 'react'
 import {Link, Route, Routes } from 'react-router-dom'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
@@ -34,13 +35,15 @@ function App() {
     return (
       <div className="App">
        
-       <ul className='navbar'>
-        
-          <li><Link to='/'>Profile</Link></li>
-          <li><Link to='/posts'>Posts</Link></li>
-          <li><Link to='/friends'>Friends</Link></li>
-          <li><button onClick={handleLogout}>Logout</button></li>
-       </ul>
+       <div class="nav-wrapper">
+       <ul id="nav-mobile" class="right hide-on-med-and-down"className='navbar'>
+        <li><Link to='/'>Profile</Link></li>
+        <li><Link to='/posts'>Posts</Link></li>
+        <li><Link to='/friends'>Friends</Link></li>
+        <li><button onClick={handleLogout}>Logout</button></li>
+     </ul>
+       </div>
+       
   
        <Routes>
         <Route path='/' element={<ProfilePage backendURL={backendURL}/>}/>

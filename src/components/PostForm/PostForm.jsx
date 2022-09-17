@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import tokenService from "../../utils/tokenService";
-
+import M from 'materialize-css'
 
 const PostForm= ({backendURL}) => {
 
@@ -41,19 +41,25 @@ const PostForm= ({backendURL}) => {
     }
 
     return (
-        <form className='newPost' class='form' onSubmit={handleSubmit}>
-        <h2>Make a New Post!</h2>
+        <div class="column">
+        <form className='newPost'  onSubmit={handleSubmit}>
+        <h2 class="center-align"> Make a New Post!</h2>
 
         <label htmlFor="title">Title</label>
         <input onChange={handleChange} type="text" name="title" id="title" />
         <label htmlFor="content">Content</label>
-        <input onChange={handleChange} type="textarea" name="content" id="content" />
+        <textarea onChange={handleChange} id="icon_prefix2" class="materialize-textarea"></textarea>
+        {/* <input type="textarea" name="content" id="content" /> */}
         {/* <label htmlFor="author">Author</label>
     <input onChange={handleChange} type="string" name="author" id="author" /> */}
-        <button type="submit">Make Post</button>
+        <button 
+        class="btn-floating btn-large waves-effect waves-light red"
+        type="submit"><i class="material-icons">add</i></button>
+        <a type="submit" onClick={handleSubmit} class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
         <br />
     </form>
-
+    </div>
 
 
     )
