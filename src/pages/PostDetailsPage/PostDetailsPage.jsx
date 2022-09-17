@@ -4,6 +4,7 @@ import axios from "axios";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import userServices from "../../utils/userServices";
 import tokenService from "../../utils/tokenService";
+import './PostDetailsPage.css'
 
 const PostDetailsPage = ({backendURL, loggedIn}) => {
     const url = backendURL
@@ -39,12 +40,18 @@ const PostDetailsPage = ({backendURL, loggedIn}) => {
     // console.log('OWNER',isOwner)
     if(!loggedIn){ //GUEST USER
         return (
-            <div>
-                
+            <div class='postDetailBox'>
+
+                <div class='details'>
                 <h1>Title: {post.title}</h1>
-                <h2>By: {post.author}</h2>
-                <p>Content: {post.content}</p>
+                <p>By: {post.author}</p>
+                <div class= 'contentBox'><h3>{post.content}</h3></div>
+
+                </div>
+                
                 {/* Need to make delete button only visible to author of post */}
+                
+                
                 <br/>
                 {post.comments.map((comment) => {return <div><h4>{comment.title}</h4> <p>{comment.content}</p> </div>})}
     
@@ -52,13 +59,19 @@ const PostDetailsPage = ({backendURL, loggedIn}) => {
         )
     }else{ //Logged in but not Owner
         return (
-            <div>
-                
+            <div class='postDetailBox'>
+
+                <div class='details'>
                 <h1>Title: {post.title}</h1>
-                <h2>By: {post.author}</h2>
-                <p>Content: {post.content}</p>
-                {/* Need to make delete button only visible to author of post */}
+                <p>By: {post.author}</p>
+                <div class= 'contentBox'><h3>{post.content}</h3></div>
+
                 <CommentForm backendURL={url} post={post}/>
+                </div>
+                
+                {/* Need to make delete button only visible to author of post */}
+                
+                
                 <br/>
                 {post.comments.map((comment) => {return <div><h4>{comment.title}</h4> <p>{comment.content}</p> </div>})}
     

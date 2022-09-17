@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import tokenService from "../../utils/tokenService";
+import './SignUpForm.css'
 const SignUpForm = ({backendURL}) => {
     const [userCred, SetUserCred] = useState({username: "", email: "", password: "", confirmPassword: ""})
     const [errorCode, setErrorCode] = useState(0);
@@ -43,7 +44,11 @@ const SignUpForm = ({backendURL}) => {
 
 
     return (
-        <form class='form' onSubmit={handleSubmit}>
+        <div class="signupContainer">
+
+            <div class="signupFormBox">
+
+            <form class='signupForm' onSubmit={handleSubmit}>
       <br/>
       <h3>User Sign Up</h3>
         {(errorCode===1)?<p className='error'>passwords don't match</p>:null}
@@ -59,6 +64,11 @@ const SignUpForm = ({backendURL}) => {
         <button type="submit">Sign Up</button>
         <br/>
     </form>
+            </div>
+
+
+        </div>
+      
     )
 }
 export default SignUpForm

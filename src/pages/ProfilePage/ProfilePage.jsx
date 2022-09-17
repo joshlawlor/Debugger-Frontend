@@ -3,6 +3,7 @@ import userServices from '../../utils/userServices'
 import tokenService from '../../utils/tokenService';
 import { useNavigate , useParams} from 'react-router-dom';
 import axios from 'axios';
+import './ProfilePage.css'
 const ProfilePage = ({backendURL}) => {
     const [userPosts, setUserPosts] = useState([]);
 
@@ -68,15 +69,16 @@ const ProfilePage = ({backendURL}) => {
 
 
     return (
-        <div>
-            <h1 class='title'>Welcome {user.username}!</h1>
+        <div class='profileBox'>
+            <h1 class='header'>Welcome {user.username}!</h1>
 
+            <div class="userPostBox">
             <h2>Your Posts:</h2>
             <button onClick={refreshPost}>REFRESH POSTS</button>
             <ul>
                 {userPosts.map(post => {
                     return (
-                        <ul>
+                        <ul class="post">
                             <li>{post.title}</li>
                             <a href={`/posts/${post._id}/edit`}><button>EDIT</button></a>
                             <br/>
@@ -84,6 +86,8 @@ const ProfilePage = ({backendURL}) => {
                     )
                 })}
             </ul>
+            </div>
+            
         </div>
     )
 }

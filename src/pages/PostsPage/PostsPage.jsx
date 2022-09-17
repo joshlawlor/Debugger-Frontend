@@ -69,7 +69,7 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
 
         }else{
             return (
-            <div>
+            <div class="postBox">
                     <h1 class="header">Welcome to BugBuddy!</h1>
 
                     <h1>Debugging Posts</h1>
@@ -78,7 +78,7 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
                     <ul>
                         {posts.map(post => {
                             return (
-                                <ul>
+                                <ul class="post">
                                     <li>{post.title}</li>
                                     <br/>
                                     <a href={`/posts/${post._id}`}><button>View</button></a>

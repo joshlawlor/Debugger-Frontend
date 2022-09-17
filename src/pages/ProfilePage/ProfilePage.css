@@ -1,0 +1,28 @@
+.profileBox{
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.userPostBox {
+    border: 10px solid #8B4513;
+    background-color:#D2B48C;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 1650px;
+    max-height: 1000px;
+}
+
+.post {
+    border: 5px solid #8B4513;
+    min-height: 30px;
+    min-width: 1400px;
+    background-color: #F5DEB3;
+    margin: 5px;
+    display: flex;
+    justify-content: left;
+    align-content: space-around;
+}

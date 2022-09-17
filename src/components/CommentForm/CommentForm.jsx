@@ -36,8 +36,10 @@ const CommentForm = ({post}) => {
 
 
     return (
-        <div>
-            <h4>Comment below</h4>
+        <div class="commentContainer">
+
+
+            <h4 class="header">Comment below</h4>
         <form onSubmit={handleSubmit} className="form">
             <label htmlFor='title'>Title:<br/>
                 <input type="text" id='title' onChange={handleChange} />

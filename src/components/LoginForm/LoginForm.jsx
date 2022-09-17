@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import tokenService from "../../utils/tokenService";
+import './LoginForm.css'
 
 const LoginForm = ({backendURL}) => {
     const [userCred, SetUserCred] = useState({email: "", password: ""});
@@ -57,21 +58,28 @@ const LoginForm = ({backendURL}) => {
     
 
     return (
-        <form class='form' onSubmit={handleSubmit}>
-          <br/>
-          <h3> User Login </h3>
-            <div className='loginForm'>
+      <div class="loginContainer">
 
-            <label className='label' htmlFor="Email">Email</label>
-            <input className="inputBox" onChange={handleChange} type="email" name="email" id="email" />
-            </div>
-            <div className='loginForm'>
-            <label className='label' htmlFor="password">Password</label>
-            <input className="inputBox" onChange={handleChange} type="password" name="password" id="password" />
-            </div>
-            <br/>
-            <button className='loginButton' type="submit">Log In</button>
-        </form>
+        <div class="loginFormBox">
+          <form class='loginForm' onSubmit={handleSubmit}>
+              <br/>
+              <h3 class="header"> User Login </h3>
+                <div className='loginForm'>
+
+                <label className='label' htmlFor="Email">Email</label>
+                <input className="inputBox" onChange={handleChange} type="email" name="email" id="email" />
+                </div>
+                <div className='loginForm'>
+                <label className='label' htmlFor="password">Password</label>
+                <input className="inputBox" onChange={handleChange} type="password" name="password" id="password" />
+                </div>
+                <br/>
+                <button className='loginButton' type="submit">Log In</button>
+            </form>
+        </div>
+        
+      </div>
+        
       )
 }
 

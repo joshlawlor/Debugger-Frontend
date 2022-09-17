@@ -58,13 +58,12 @@ const EditPostPage = ({ backendURL, loggedIn }) => {
     }
 
     return (
-        <div>
+        <div class='postDetailBox'>
 
-            <h1>Title: {post.title}</h1>
-            <h2>By: {post.author}</h2>
-            <p>Content: {post.content}</p>
+            <div class='details'>   <h1>Title: {post.title}</h1>
+            <p>By: {post.author}</p>
+            <h4> {post.content}</h4>
             <button onClick={handleDelete} postId={post._id}>DELETE POST</button>
-
             <form onSubmit={handleSubmit} className="form">
                 <label htmlFor='title'>Title:<br/>
                     <input type="text" id='title' onChange={handleChange} ></input>
@@ -77,6 +76,10 @@ const EditPostPage = ({ backendURL, loggedIn }) => {
                 <button type='submit'>Edit Post</button>
 
             </form>
+            </div>
+         
+
+         
             {/* Need to make delete button only visible to author of post */}
             <br />
             {post.comments.map((comment) => { return <div><h4>{comment.title}</h4> <p>{comment.content}</p> </div> })}
