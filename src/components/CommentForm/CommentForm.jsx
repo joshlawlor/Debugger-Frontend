@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 const CommentForm = ({post}) => {
-    const backendURL = 'http://localhost:9000'
+    const backendURL = "https://bugbuddy-backend.herokuapp.com"
     const navigate = useNavigate()
     const initialState = {
         title: "",
@@ -30,7 +30,7 @@ const CommentForm = ({post}) => {
             setFormData(initialState)
             return response.json()
         })
-        // navigate(`/posts/${post._id}`, {replace:true})
+        navigate(`/posts/${post._id}`, {replace:true})
         window.location.reload(false);
     }
 

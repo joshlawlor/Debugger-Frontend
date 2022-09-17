@@ -11,7 +11,7 @@ import tokenService from './utils/tokenService';
 import { useNavigate} from 'react-router-dom';
 import EditPostPage from './pages/EditPostPage/EditPostPage';
 import PostsPage from './pages/PostsPage/PostsPage'
-const backendURL = "http://localhost:9000"
+const backendURL = "https://bugbuddy-backend.herokuapp.com"
 
 function App() {
   const [user, setUser] = useState(userServices.getUser())

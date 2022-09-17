@@ -11,7 +11,7 @@ const SignUpForm = ({backendURL}) => {
     };
 
     async function testUserCred(){
-        console.log(backendURL)
+        console.log(userCred)
         await fetch(backendURL + '/users/signup', {method: "POST", body: JSON.stringify(userCred),
         headers: new Headers({'content-type': 'application/json'})})
         .then((response) =>{
