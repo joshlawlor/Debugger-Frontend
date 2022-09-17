@@ -1,4 +1,8 @@
 
+.body{
+  background-color:#CD853F;
+
+}
 
 .App {
   align-items: center;
@@ -9,7 +13,9 @@
   display: block;
   align-items: center;
   list-style-type: none;
-  background-color: #ad5222;
+  background-color: #556B2F;
+
+  
   margin: 0;
   padding: 10px;
 }
@@ -36,5 +42,5 @@ li a:hover{
   float: center;
   display: block;
   text-align: center;
-  align-items: center;
+  align-items: left;
 }

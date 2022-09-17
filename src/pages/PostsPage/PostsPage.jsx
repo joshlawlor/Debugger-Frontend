@@ -63,6 +63,8 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
         }else{
             return (
             <div>
+                    <h1>Welcome to BugBuddy!</h1>
+
                     <h1>Debugging Posts</h1>
                     <ul>
                         {posts.map(post => {
