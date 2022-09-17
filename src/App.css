@@ -8,10 +8,15 @@
   align-items: center;
 }
 
+.header{
+  text-align: center;
+}
+
+
 .navbar {
   float: center;
-  display: block;
-  align-items: center;
+  display: flex;
+  justify-content: center;
   list-style-type: none;
   background-color: #556B2F;
 

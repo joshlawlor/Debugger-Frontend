@@ -69,7 +69,7 @@ const ProfilePage = ({backendURL}) => {
 
     return (
         <div>
-            <h1>Welcome {user.username}!</h1>
+            <h1 class='title'>Welcome {user.username}!</h1>
 
             <h2>Your Posts:</h2>
             <button onClick={refreshPost}>REFRESH POSTS</button>

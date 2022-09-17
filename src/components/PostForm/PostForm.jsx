@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import tokenService from "../../utils/tokenService";
-
+import './PostForm.css'
 
 const PostForm= ({backendURL}) => {
 
@@ -41,12 +41,11 @@ const PostForm= ({backendURL}) => {
     }
 
     return (
-        <div class="row">
+        <div class="formBox">
         <form className='newPost' class='form' onSubmit={handleSubmit}>
         <h2>Make a New Post!</h2>
-
         <label htmlFor="title">Title</label>
-        <input onChange={handleChange} type="text" name="title" id="title" />
+        <input class="inputBox"onChange={handleChange} type="text" name="title" id="title" />
         <label htmlFor="content">Content</label>
         {/* <textarea id="textarea1" class="materialize-textarea"></textarea> */}
         <input onChange={handleChange} type="textarea" name="content" id="content" />

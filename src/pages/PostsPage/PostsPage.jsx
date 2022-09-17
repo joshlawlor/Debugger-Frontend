@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PostForm from "../../components/PostForm/PostForm";
 import tokenService from "../../utils/tokenService";
 import M from 'materialize-css'
+import './PostsPage.css'
 
 const PostsPage = ({ backendURL, loggedIn } ) => {
 
@@ -39,23 +40,29 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
     
         if(loggedIn){
             return (
-                <div>
-                    <h1>Welcome to BugBuddy!</h1>
+                <div class="postBox">
+                    <h1 class="header">Welcome to BugBuddy!</h1>
 
                     <PostForm backendURL={backendURL}/>
                     <h1>Debugging Posts</h1>
+
+                    <div class="postList">
+
                     <ul>
                         {posts.map(post => {
                             return (
-                                <ul>
-                                    <li>{post.title}</li>
+                                <ul class="post">
+                                    <li>{post.title} </li>
                                     <br/>
                                     <a href={`/posts/${post._id}`}><button>View</button></a>
                                     <br/>
+                                    {/* <li>{post.content}</li> */}
                                 </ul>
                             )
                         })}
                     </ul>
+                    </div>
+                    
                 </div>
             )
 
@@ -63,9 +70,11 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
         }else{
             return (
             <div>
-                    <h1>Welcome to BugBuddy!</h1>
+                    <h1 class="header">Welcome to BugBuddy!</h1>
 
                     <h1>Debugging Posts</h1>
+                    <div class="postList">
+
                     <ul>
                         {posts.map(post => {
                             return (
@@ -78,7 +87,10 @@ const PostsPage = ({ backendURL, loggedIn } ) => {
                             )
                         })}
                     </ul>
+                    </div>
+                    
                 </div>
+                
             )
 
         }

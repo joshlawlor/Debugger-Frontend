@@ -40,7 +40,7 @@ function App() {
         <li><Link to='/'>Profile</Link></li>
         <li><Link to='/posts'>Posts</Link></li>
         <li><Link to='/friends'>Friends</Link></li>
-        <li><button onClick={handleLogout}>Logout</button></li>
+        <button onClick={handleLogout}>Logout</button>
      </ul>
        </div>
        

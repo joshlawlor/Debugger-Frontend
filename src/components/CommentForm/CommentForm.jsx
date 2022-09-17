@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import tokenService from '../../utils/tokenService'
 import axios from 'axios'
-
+import './CommentForm.css'
 
 const CommentForm = ({post}) => {
     const backendURL = "https://bugbuddy-backend.herokuapp.com"
